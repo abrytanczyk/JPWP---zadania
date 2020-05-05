@@ -7,7 +7,7 @@ W tym pliku należy uzupełnić wątek threaded_client
 Należy również zmodyfikować adres IP w zmiennej 'HOST' na swój z sieci lokalnej
 '''
 
-HOST = "192.168.0.1"
+HOST = "192.168.2.1"
 PORT = 8999
 
 connections = 0
@@ -31,8 +31,33 @@ def threaded_client(connection, my_id):
 
     # W nieskończonej pętli należy odbierać wiadomości metodą connection.recv
     # Przesłaną wiadomość wyświetl na ekranie
+    global connections
+
+    while True:
+        try:
+            data = connection.recv(2048)
+            message = pickle.loads(data)
+
+            print(f"Message from {my_id}: {message}")
+
+        except Exception as e:
+            print(e)
+            break
+    # disconneted
+    try:
+        print(f"Connection {my_id} Close")
+        connections -= 1
+        my_id -= 1
+        connection.close()
+
+    except Exception as e:
+        print(e)
 
 
 while True:
     # Serwer oczekuje na nowe połączenie od clienta
     # Analogicznie jak w zadaniu 2
+    client, addr = s.accept()
+    print(f"Connection from {addr} has been established. ID = {connections}.")
+    start_new_thread(threaded_client, (client, connections))
+    connections += 1

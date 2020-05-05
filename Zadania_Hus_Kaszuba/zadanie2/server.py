@@ -11,7 +11,7 @@ W tym pliku należy uzupełnić pętlę while (linijka 153)
 Należy również zmodyfikować adres IP w zmiennej host na swój z sieci lokalnej
 '''
 
-HOST = "192.168.0.1"
+HOST = "192.168.2.1"
 PORT = 8999
 
 s = socket(AF_INET, SOCK_STREAM)
@@ -155,3 +155,7 @@ while True:
     # Serwer powinien akceptować takie połączenia (socket przypisany jest do zmiennej 's')
     # Następnie wywołać funkcje threded_client z gniazdem i unikalnym id klienta
     # Pro tip: Skorzystaj ze zmiennej my_id
+    client, addr = s.accept()
+    print(f"Connection from {addr} has been established. ID = {connections}.")
+    start_new_thread(threaded_client, (client, connections))
+    connections += 1
