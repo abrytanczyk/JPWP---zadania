@@ -1,6 +1,8 @@
 import os
 import sys
 
+import pygame as pygame
+
 from network import Network
 from player import *
 
