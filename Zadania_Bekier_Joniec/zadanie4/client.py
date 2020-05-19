@@ -37,6 +37,7 @@ buffer_player1 = Buffer()
 buffer_player1_recv = Buffer()
 buffer_player2 = Buffer()
 buffer_ball = Buffer()
+
 def thread_updating_data(n,c):
     '''
     Należy cylkiczne wysyłać bufor naszego gracza
