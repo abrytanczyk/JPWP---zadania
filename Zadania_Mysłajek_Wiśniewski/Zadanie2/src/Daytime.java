@@ -22,10 +22,10 @@ class DateTime {
             socket.connect(socketAddress);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String time = in.readLine();
-            System.out.println(time);
             socket.shutdownInput();
             socket.shutdownOutput();
             socket.close();
+            System.out.println(time);
         } catch (IOException e) {
             e.printStackTrace();
         }
