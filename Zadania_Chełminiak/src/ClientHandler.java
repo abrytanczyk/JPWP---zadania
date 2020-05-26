@@ -18,7 +18,7 @@ class ClientHandler {
                 //Handle client requests
                 //TODO 2.2 Obsłuż żądania klienta. Dla ułatwienia pozostawiono tyle pustych linii, ile powinien zajmować kod
                 case "infos":
-
+                    String newInfo = in.readUTF();
 
 
 

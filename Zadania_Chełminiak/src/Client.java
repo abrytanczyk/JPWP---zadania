@@ -42,7 +42,9 @@ public class Client {
             out.writeUTF(args);
             if (!type.equals("subscription")) {
                 String input = in.readUTF();
-                //TODO 2.3 Wykonaj parsowanie strony internetowej i wyświetl ją za pomocą funkcji show(...)
+                // 2.3 Wykonaj parsowanie strony internetowej i wyświetl ją za pomocą funkcji show(...)
+                Document doc = Jsoup.parse(input);
+                show(doc, "site");
             }
             out.close();
             in.close();

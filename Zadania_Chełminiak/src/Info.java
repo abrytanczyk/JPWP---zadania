@@ -38,7 +38,7 @@ public class Info {
                             site.append("<div class = 'container><a href= '").append(elem.attr("href")).append("'>").append("<h2>").append(elem.text()).append("</h2></a></div>");
                         } else {
                             // 1.1 Witryna gov.pl nie jest skora do współpracy. Dodaj adres url do znacznika <a href> przed przypisaniem adresu, pod którym znajduje się artykuł
-                            elem.append("<div class = 'container><a href= '").append(url).append("'>").append("<h2>").append(elem.text()).append("</h2></a></div>");
+                            site.append("<div class = 'container><a href= '").append(url).append(elem.attr("href")).append("'>").append("<h2>").append(elem.text()).append("</h2></a></div>");
                         }
                     }
                 }
@@ -70,12 +70,12 @@ public class Info {
                     //Compare given phrase with text from Elements
                     if (elem.text().toLowerCase().contains("koronawirus")) { // 1.1 Znajdź w tekście wszystkie wystąpienia 'koronawirus' (przydatna może okazac się funkcja text()) - done
                         if (elem.attr("href").startsWith("/")) {
-                            //TODO 1.1 Dopisz adres URL jeśli strona zawiera adresowanie względne, a następnie zapisz tytuł
-                            //TODO 1.1 artykułu i odnośnik do niego do zmiennej newsletter
-
+                            // 1.1 Dopisz adres URL jeśli strona zawiera adresowanie względne, a następnie zapisz tytuł
+                            // 1.1 artykułu i odnośnik do niego do zmiennej newsletter
+                            newsletter.append("<div class = 'container><a href= '").append(elem.attr("href")).append("'>").append("<h2>").append(elem.text()).append("</h2></a></div>");
                         } else {
-                            //TODO 1.1 Dopisz tytuł artykułu i odnośnik do niego do zmiennej newsletter
-
+                            // 1.1 Dopisz tytuł artykułu i odnośnik do niego do zmiennej newsletter
+                            newsletter.append("<div class = 'container><a href= '").append(url).append(elem.attr("href")).append("'>").append("<h2>").append(elem.text()).append("</h2></a></div>");
                         }
                     }
                 }
