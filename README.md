@@ -4,4 +4,5 @@
  2. 12.05, godz 11:15 - J.Bekier & M.Joniec
  3. 19.05, godz 11:15 - T.Mysłajek & J.Wiśniewski
  4. 27.05, godz 9:35 - M.Pawlus
+ 5. 27.05, godz 9:35 - D.Mirowska
  
