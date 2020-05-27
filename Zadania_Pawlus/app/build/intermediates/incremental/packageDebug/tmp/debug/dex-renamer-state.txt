@@ -1,4 +1,4 @@
-#Wed May 27 10:44:06 CEST 2020
+#Wed May 27 14:08:17 CEST 2020
 base.0=C\:\\Users\\Ola\\Documents\\studia\\jpwp\\JPWP---zadania\\Zadania_Pawlus\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -20,6 +20,17 @@ public class Login extends AppCompatActivity {
         textEmail=(EditText) findViewById(R.id.txt_loginEmail);
         textPassword=(EditText) findViewById(R.id.txt_loginPassword);
 
-        //TODO napisz obsługę przycisky buttonLogin, nie zapomnij o hashowaniu hasla
+        //done - napisz obsługę przycisky buttonLogin, nie zapomnij o hashowaniu hasla
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email=textEmail.getText().toString();
+                String password = Base64.encodeToString(textPassword.getText().toString().getBytes(), Base64.DEFAULT);  //hashowanie hasła
+                String type="login";
+                BackgroundTask backgroundTask= new BackgroundTask(getApplicationContext());
+                backgroundTask.execute(type, email, password);
+
+            }
+        });
     }
 }
