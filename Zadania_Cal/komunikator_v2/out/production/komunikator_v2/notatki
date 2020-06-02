@@ -1,0 +1,37 @@
+---------------------------CLASSES-----------------------------
+ServerSide classes:
+-Server
+-ClientHandler
+-AcceptingConnections
+-ServerGUI [java and form]
+-CustomOutputStream [common]
+
+ClientSide classes:
+-Client
+-ClientConnection
+-ClientGUI [java and form]
+-CustomOutputStream [common]
+
+-----------------------------FLAGS-------------------------------
+<SERVER_MSG> usual msg but from server
+<SERVER> reserved
+
+----Flags from server [sending]
+<SERVER_MSG>
+<USER_LIST>
+<KICKED_OUT>
+<SERVER_CLOSED>
+
+----Flags in clientHandler [read => send response]
+
+<C_NAME> => <SERVER_C_NAME>&" + "Name already taken"  +
+         => <SERVER_C_NAME>&" + "Name Accepted"       +
+            broadcast(<SERVER_MSG>)
+<MSG> => <MSG>
+      => broadcast(<MSG>)
+<LOGOUT>  => broadcast(<SERVER_MSG>)
+
+----Flags from client
+<C_NAME>
+<MSG>
+<LOGOUT>

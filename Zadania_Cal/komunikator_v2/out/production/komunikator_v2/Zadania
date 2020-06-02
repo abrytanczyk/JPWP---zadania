@@ -1,0 +1,42 @@
+Zadania:
+    Strona Serwera:
+        W klasie Server:
+            ToDo.1.1
+            Przypisz argumenty funkcji do odpowiednich zmiennych.
+            Przypisz odpowiednią wartość do zmiennej inetAddress.
+            Utwórz i przypisz do odpowiedniej zmiennej ServerSocket (ustaw pojemność listy zgłoszeń do zaakceptowania na 50).
+
+            ToDo.1.2
+            Uzupełnij funkcję .broadcast(String what) tak by wysyłała podany w argumencie String do wszystkich aktywnych klientów
+
+        W klasie AcceptingConnections:
+            ToDo.2.1
+            Rozpocznij nasłuchiwanie i akceptowanie połączeń.
+            Utwórz strumienie wejścia i wyjścia.
+            Utwórz obiekt klasy ClientHandler i przekaż go do innego wątku.
+
+        W klasie ClientHandler:
+            ToDo.3.1
+            W funkcji .disconnectUser() brakuje jednej ważnej linijki.
+            Uzupełnij ją.
+
+    Strona Klienta:
+        W klasie Client:
+            ToDo.4.1
+            Przypisz odpowiednie wartości do zmiennych typu InetAddress.
+            Utwórz niedowiązane gniazdo z możliwością dowiązania do adresu nawet gdy poprzednie połączenie jest on w stanie timeout.
+            Dowiąż gniazdo do lokalnego adresu i połącz je z serwerem.
+            Utwórz i wpisz do opowiednich zmiennych strumień wejściowy i wyjściowy.
+
+            ToDo.4.2
+            Odbierz treść ze strumienia i podziel ją na tokeny wg delimiter'a "&".
+            Utwórz zmienną tag1 wpisz do niej pierwszy token.
+
+            ToDo.4.3
+            Uzupełnij funkcję .askForName().
+            Sprawdź czy podane imię spełnia określone reguły (znajdź w kodzie i użyj odpowiedniej funkcji).
+            Jeśli tak to wyślij odpowiednią treść do serwera (zasugeruj się kodem serwera w tym jak ją sformułować), jeśli nie to wyświetl dlaczego.
+
+Wskazówki:
+    1. Liczba wykomentowanych linijek jest sugestią ile linijek kodu powinno być.
+    2. Gettery i Settery są po to by ich używać (SZCZEGÓLNIE w 4.1 !)
