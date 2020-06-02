@@ -51,6 +51,14 @@ public class Client {
             //
             //
 
+            //4.1
+            serverInetAddress = InetAddress.getByName(serverIp);
+            clientInetAddress = InetAddress.getByName(clientIp);
+            socket = new Socket();
+            InetSocketAddress serverSocketAddress = new InetSocketAddress(serverInetAddress, serverPort);
+            socket.connect(serverSocketAddress);
+            dis = new DataInputStream(socket.getInputStream());
+            dos = new DataOutputStream(socket.getOutputStream());
 
 
             setConnected(true);
@@ -91,6 +99,10 @@ public class Client {
 
                             //ToDo.4.2
                             //
+
+                            //4.2
+                            StringTokenizer st = new StringTokenizer(dis.readUTF());
+                            String tag1 = st.nextToken("&");
 
                             String tmp;
 
@@ -173,6 +185,15 @@ public class Client {
         //
         //
         //
+
+        //4.3
+        String isValid = checkIfNameIsValid(clientName);
+        if (isValid.equals("true")){
+            Server.getClientHandlersHM();
+        }
+        else {
+            System.out.println(isValid);
+        }
 
     }
 

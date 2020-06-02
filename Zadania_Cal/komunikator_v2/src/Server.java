@@ -75,7 +75,7 @@ public class Server extends Thread{
         //
         //ToDo.1.2
         //
-        broadcast("<SERVER_MSG>&" + what);
+        broadcast("<SERVER_MSG>&" + 0 + what);
     }
 
     public void sendUserList() throws IOException {
