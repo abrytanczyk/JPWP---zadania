@@ -42,19 +42,10 @@ public class Client {
     public void startClient() throws IOException {
         try {
 
-            //
-            // ToDo.4.1
-            //
-            //
-            //
-            //
-            //
-            //
-
             //4.1
             serverInetAddress = InetAddress.getByName(serverIp);
             clientInetAddress = InetAddress.getByName(clientIp);
-            socket = new Socket();
+            socket = new Socket(clientIp, clientPort);
             InetSocketAddress serverSocketAddress = new InetSocketAddress(serverInetAddress, serverPort);
             socket.connect(serverSocketAddress);
             dis = new DataInputStream(socket.getInputStream());
@@ -96,9 +87,6 @@ public class Client {
                 public void run() {
                     while (isConnected()) {
                         try {
-
-                            //ToDo.4.2
-                            //
 
                             //4.2
                             StringTokenizer st = new StringTokenizer(dis.readUTF());
@@ -189,7 +177,11 @@ public class Client {
         //4.3
         String isValid = checkIfNameIsValid(clientName);
         if (isValid.equals("true")){
-            Server.getClientHandlersHM();
+            setIfServerAcceptedName(true);
+            //getAcceptingConnections().start();
+            //dos.writeUTF("<SERVER_C_NAME>&" + clientName);
+            //Server.getClientNamesHM().put(getClientNumber(), getName());
+            //getDos().writeUTF("<SERVER_C_NAME>&" + "Name accepted.");
         }
         else {
             System.out.println(isValid);

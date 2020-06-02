@@ -18,7 +18,7 @@ public class AcceptingConnections extends Thread {
                 try {
 
                     //2.1
-                    Socket socket = this.server.getS();
+                    Socket socket = server.getSs().accept();
                     DataInputStream dis = new DataInputStream(socket.getInputStream());
                     DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
                     ClientHandler cH = new ClientHandler(socket, server.getClientNr(), dis, dos, server);

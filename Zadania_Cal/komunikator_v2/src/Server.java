@@ -49,7 +49,7 @@ public class Server extends Thread{
             // 1.1
             this.serverPort = serverPortVar;
             this.serverIP = serverIp;
-            this.inetAddress = getInetAddress();
+            this.inetAddress = InetAddress.getByName(serverIP);
             this.ss = new ServerSocket(this.serverPort, 50, this.inetAddress);
 
             setAcceptingConnections(new AcceptingConnections(this));
@@ -72,10 +72,9 @@ public class Server extends Thread{
     }
 
     public void broadcast(String what) throws IOException {
-        //
-        //ToDo.1.2
-        //
-        broadcast("<SERVER_MSG>&" + 0 + what);
+        //1.2
+        clientNr = 0;
+        broadcast("<SERVER_MSG>&" + getClientNr() + what);
     }
 
     public void sendUserList() throws IOException {
